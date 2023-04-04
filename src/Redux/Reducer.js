@@ -1,5 +1,12 @@
+import {LIKES} from './Constants'
 
 export const likesdata =(data=[],action)=>{
-    console.log("Reducer called",action)
-    return "abc"
+   
+    switch(action.type){
+        case  LIKES:
+            console.log("Reducer called",action)
+            return [action.data,...data]
+        default:
+            return data
+    }
 }
